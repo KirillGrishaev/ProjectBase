@@ -10,14 +10,16 @@ public abstract class Chelovek{
     private String dolznost;
     private String name;
     private String patronymic;
+    private double moneyToABankAccount;
 
-    public  Chelovek(String type, String familia , String name, String patronymic){//конструктор для создания people.base.Chelovek типа Client (Клиент назван Гостем)
+    public  Chelovek(String type, String familia, int vozrast,int dohod , String name, String patronymic,double moneyToABankAccount){//конструктор для создания people.base.Chelovek типа Client (Клиент назван Гостем)
         this.familia = familia;
-        this.vozrast = generateRandomIntVozrast();
-        this.dohod = generateRandomIntDohod(9000,1000000);
+        this.vozrast = vozrast;
+        this.dohod = dohod;
         this.name = name;
         this.patronymic = patronymic;
         this.type = type;
+        this.moneyToABankAccount = moneyToABankAccount;
     }
 
     public Chelovek(String type, String dolznost, String familia , String name, String patronymic){//конструктор для создания people.base.Chelovek типа Sotrundnik
@@ -67,8 +69,14 @@ public abstract class Chelovek{
     public String getDolznost() {
         return dolznost;
     }
+
     public void setDolznost(String dolznost) {
         this.dolznost = dolznost;
     }
+    public int getMoneyToABankAccount() {
+        return (int) moneyToABankAccount;
+    }
 
+    public void setMoneyToABankAccount(double moneyToABankAccount) {
+        this.moneyToABankAccount = moneyToABankAccount;    }
     }

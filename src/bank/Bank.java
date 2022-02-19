@@ -1,6 +1,6 @@
 package bank;
 import bank.otdel.OtdelCredit;
-import bank.otdel.OtdelCassa;
+import bank.Search;
 import bank.otdel.OtdelPay;
 import bank.otdel.Pay;
 
@@ -32,7 +32,9 @@ public class Bank {//Для отображения общих параметро
     Pay otdelCassa = bankOffice.getOtdelCassa();
     Pay otdelPay = bankOffice.getOtdelPay();
     otdelCassa.getMoney();
-    otdelPay.getMoney();
+    otdelPay.setMoney();
+    Search search = new Search();
+    search.searchClient();
     }
 
     public String getName() {return name;}
