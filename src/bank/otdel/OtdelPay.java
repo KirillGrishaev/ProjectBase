@@ -5,7 +5,7 @@ import people.client.Client;
 public class OtdelPay extends OtdelConstruct implements Pay {
 
     public Client getClient() {
-        Client client = new Client("Клиент","1",1,7,"1","1",123);
+        Client client = new Client("Клиент","1","1","1",123);
         return client;
     }
 

@@ -7,7 +7,7 @@ public class OtdelCassa extends OtdelConstruct implements Pay {
     private Client client;
 
     public Client getClient() {
-        Client client = new Client("Клиент","1",65,15,"1","1",123);
+        Client client = new Client("Клиент","1","1","1",123);
         return client;
     }
 
@@ -21,7 +21,6 @@ public class OtdelCassa extends OtdelConstruct implements Pay {
         double moneyToABankAccount = client.getMoneyToABankAccount();
         moneyToABankAccount = (moneyToABankAccount - (50+(50/10)));//комиссия 10% за операцию.
         client.setMoneyToABankAccount(moneyToABankAccount);
-        System.out.println("****"+client.getMoneyToABankAccount()+"*****");
         return moneyToABankAccount;
     }
 

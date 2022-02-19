@@ -14,7 +14,7 @@ public class OtdelCredit extends OtdelConstruct {
         specialist = new Sotrudnik("Сотрудник","Консультант отдела кредитования","Иванов","Иван","Иванович");
     }
     public void vidatCredit() {
-        Client A = new Client ("Клиент","1",15,65,"1","1",123);//инициализация класса Client
+        Client A = new Client ("Клиент","1","1","1",123);//инициализация класса Client
         List <Client> clientBase =  A.getClientBase();
         Sotrudnik specialist = getSpecialist();
            for (int i=0;i< clientBase.size(); i++){
