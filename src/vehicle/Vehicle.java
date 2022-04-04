@@ -48,12 +48,11 @@ public class Vehicle {
     }
     @Override
     public String toString() {
-        return "Vehicle1.txt{" +
-                "type='" + type + '\'' +
-                ", name='" + name + '\'' +
-                ", price='" + price + '\'' +
-                ", serviceLife=" + serviceLife +
-                ", weight=" + weight +
-                '}'+"\n";
+        return  "Тип техники: " + type + ';' +
+                "Название: " + name + ';' +
+                "Стоимость: " + price + ';' +
+                "Срок службы: " + serviceLife +
+                "Вес: " + weight +
+                "\n";
     }
 }
