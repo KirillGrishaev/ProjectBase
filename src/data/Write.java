@@ -8,13 +8,8 @@ public class Write {
         Scanner sc = new Scanner(System.in);
         String fileName = sc.next();
         try (BufferedWriter fw = new BufferedWriter(new FileWriter(CATALOG_NAME + fileName, true))) {
-            fw.write("\n");
-            fw.write("Тип техники: " + sc.next() + ";"+"Название: " + sc.next() + ";"+"Срок_службы: " + sc.next() + ";"
-                         +"Вес: " + sc.next() + ";"+"Стоимость: " + sc.nextInt() + ";");
-            /*fw.write("Название: " + sc.next() + ";");
-            fw.write("Срок_службы: " + sc.next() + ";");
-            fw.write("Вес: " + sc.next() + ";");
-            fw.write("Стоимость: " + sc.nextInt() + ";");*/
+           fw.write("\nТип техники: " + sc.next() + ";"+"Название: " + sc.next() + ";"+"Срок_службы: "
+                   + sc.next() + ";" +"Вес: " + sc.next() + ";"+"Стоимость: " + sc.nextInt() + ";");
         } catch (FileNotFoundException e) {
             System.out.println("Данный каталог техники не найден," + fileName + " повторите поиск по имени каталога:");
             write();
