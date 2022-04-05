@@ -1,10 +1,11 @@
 package Service;
+import java.util.*;
+import exeption.OutOfLenght;
+import fileApp.FileApp;
 import vehicle.Vehicle;
 import java.io.*;
-import java.util.List;
 public class Buy {
-    private static final String CATALOG_NAME = "file/";
-    public static void buy () {
+    public static void buy(Scanner sc) throws OutOfLenght{
         List <Vehicle> listOfVehicle = ConvertVehicle1ToCollect.convertRun();
       try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));){
           System.out.println("Выберите интересующую позицию (отсчет идет с 0): ");
@@ -17,9 +18,16 @@ public class Buy {
           int total = price*count;
           System.out.println("Спасибо за заказ. Итоговая сумма: "+total+" у.е.\n" +
                   "Мы знаем, что выбора у вас небыло, но все равно спасибо что воспользовались услугами нашей компании!");
-          } else {System.out.println("Сказали же, не больше 10 у.е. за раз в одни руки!\n*Жизнь великого Рейнджера закончилась*");}
-} catch (IOException e) {
-    e.printStackTrace();
+          } else {
+              throw new OutOfLenght("Попытка приобрести больше 10 едениц.\n");
+          }
+      } catch (IOException e) {
+        e.printStackTrace();
+      } catch (IndexOutOfBoundsException e){
+          System.out.println("Ты что, считать не умеешь?!\n" +
+                  "*Жизнь великого Рейнджера закончилась.");
+          } catch (NoSuchElementException ex){
+          ex.printStackTrace();
       }
     }
 }
