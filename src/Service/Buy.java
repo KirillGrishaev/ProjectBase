@@ -5,7 +5,7 @@ import fileApp.FileApp;
 import vehicle.Vehicle;
 import java.io.*;
 public class Buy {
-    public static void buy(Scanner sc) throws OutOfLenght{
+    public static void buy() throws OutOfLenght{
         List <Vehicle> listOfVehicle = ConvertVehicle1ToCollect.convertRun();
       try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));){
           System.out.println("Выберите интересующую позицию (отсчет идет с 0): ");
