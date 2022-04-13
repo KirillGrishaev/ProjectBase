@@ -1,8 +1,8 @@
 package fileApp;
-import Service.*;
+import service.*;
 import exeption.OutOfLenght;
-import factoryVehicle.Factori;
-
+import factoryVehicle.Factory;
+import thread.Conveer;
 import java.util.Scanner;
 public class FileApp {
 
@@ -14,7 +14,8 @@ public class FileApp {
                 "4. Отправиться в Рейд;\n" +
                 "5. Уволить системного администратора;\n" +
                 "6. Запустить производство;\n"+
-                "Любое другое число >6 для выхода.");
+                "7. Вызвать адьютанта;\n"+
+                "Любое другое число >7 для выхода.");
         Scanner sc = new Scanner(System.in);
         int choise = sc.nextInt();
         try {switch (choise) {
@@ -39,9 +40,15 @@ public class FileApp {
                 case (5):
                     System.out.println("Чё, самый умный что ли?! *Жизнь великого Рейнджера закончилась*");
                     break;
-            case (6):
+                case (6):
                 System.out.println("Ну давай что-нибудь соберем.");
-                Factori.createVehicle();
+                Factory factory = new Factory();
+                factory.createVehicle();
+                break;
+                case (7):
+                System.out.println("Добби!!!");
+                for (int i = 0; i<5;i++){
+                new Conveer("Добби"+i).start();}
                 break;
                 default:
                     System.out.println("Иди консервных банок пособирай.");

@@ -1,11 +1,8 @@
 package factoryVehicle.heavyArmoredVehicle;
 import factoryVehicle.VehicleActions;
-import factoryVehicle.parts.Body;
-import factoryVehicle.parts.Engine;
-import factoryVehicle.parts.RunningGear;
-import factoryVehicle.parts.Weapon;
+import factoryVehicle.parts.*;
 
-public class Tank implements VehicleActions {
+public class Tank extends ModelVehicleFactory  implements VehicleActions{
     public Tank(Engine engine, Body body, Weapon weapon, RunningGear runningGear) {
     }
 

@@ -1,9 +1,7 @@
 package factoryVehicle.lightArmoredVehicle;
 import factoryVehicle.VehicleFactory;
-import factoryVehicle.parts.Body;
-import factoryVehicle.parts.Engine;
-import factoryVehicle.parts.RunningGear;
-import factoryVehicle.parts.Weapon;
+import factoryVehicle.parts.*;
+
 public class LightArmoredVehicleFactory implements VehicleFactory {
 
     public static LightArmoredVehicleFactory createLAVF(){
@@ -37,7 +35,7 @@ public class LightArmoredVehicleFactory implements VehicleFactory {
         System.out.println("Установлено: автоматическая пушка.");
         return lAVWeapon;
     }
-    public LAV createLAV() {
+    public ModelVehicleFactory createLAV() {
         LightArmoredVehicleFactory factory = LightArmoredVehicleFactory.createLAVF();
         LAV lAV = new LAV(factory.createEngine(),factory.createBody(),factory.createWeapon(),factory.createRunningGear());
         System.out.println("LAV создана и готова к работе.");
