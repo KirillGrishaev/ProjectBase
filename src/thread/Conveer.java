@@ -1,5 +1,5 @@
 package thread;
-
+import service.Dobby;
 public class Conveer extends Thread {
 
     public Conveer(String threadName) {
@@ -10,6 +10,8 @@ public class Conveer extends Thread {
         System.out.println(Thread.currentThread());
         System.out.println(Thread.currentThread().getName() + "Готов вкалывать...");
         try {
+            Dobby slave = new Dobby();
+            slave.clearBoots();
             Thread.sleep(1000);
         }catch(InterruptedException e){
         System.out.println("Что, морпехи кончились?!");

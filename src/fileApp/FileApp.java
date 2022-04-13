@@ -1,7 +1,7 @@
 package fileApp;
-import Service.*;
+import service.*;
 import exeption.OutOfLenght;
-import factoryVehicle.Factori;
+import factoryVehicle.Factory;
 import thread.Conveer;
 import java.util.Scanner;
 public class FileApp {
@@ -42,11 +42,12 @@ public class FileApp {
                     break;
                 case (6):
                 System.out.println("Ну давай что-нибудь соберем.");
-                Factori.createVehicle();
+                Factory factory = new Factory();
+                factory.createVehicle();
                 break;
                 case (7):
                 System.out.println("Добби!!!");
-                for (int i = 0; i<5;i++){
+                for (int i = 0; i<2;i++){
                 new Conveer("Добби"+i).start();}
                 break;
                 default:

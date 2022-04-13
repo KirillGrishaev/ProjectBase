@@ -6,7 +6,7 @@ import factoryVehicle.parts.Engine;
 import factoryVehicle.parts.RunningGear;
 import factoryVehicle.parts.Weapon;
 
-public class LAV implements VehicleActions {
+public class LAV extends ModelVehicleFactory implements VehicleActions{
 
     public LAV(Engine engine, Body body, Weapon weapon, RunningGear runningGear) {
     }
