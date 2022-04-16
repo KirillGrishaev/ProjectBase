@@ -9,10 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 public class ConvertVehicle1ToCollect {
     private static final String CATALOG_NAME = "file/";
-    public static List<Vehicle> convertRun () {
-        Scanner sc = new Scanner(System.in);
-        String fileName = sc.next();
-        List<Vehicle> listOfVehicle = new ArrayList<>();
+    public static synchronized List<Vehicle> convertRun (String fileName) {
+          List<Vehicle> listOfVehicle = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(CATALOG_NAME+fileName))) {
             String currentLine = "";
             while ((currentLine= br.readLine()) != null) {
@@ -22,7 +20,9 @@ public class ConvertVehicle1ToCollect {
             System.out.println(listOfVehicle);
         } catch (FileNotFoundException e) {
             System.out.println("Данный каталог техники не найден," + fileName + " повторите поиск по имени каталога: ");
-            convertRun();
+            Scanner sc = new Scanner(System.in);
+            fileName = sc.next();
+            convertRun(fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }

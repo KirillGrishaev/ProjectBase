@@ -2,7 +2,7 @@ package fileApp;
 import service.*;
 import exeption.OutOfLenght;
 import factoryVehicle.Factory;
-import thread.Conveer;
+import thread.MinionDirect;
 import java.util.Scanner;
 public class FileApp {
 
@@ -14,18 +14,24 @@ public class FileApp {
                 "4. Отправиться в Рейд;\n" +
                 "5. Уволить системного администратора;\n" +
                 "6. Запустить производство;\n"+
-                "7. Вызвать адьютанта;\n"+
+                "7. Вызвать миньонов;\n"+
                 "Любое другое число >7 для выхода.");
         Scanner sc = new Scanner(System.in);
         int choise = sc.nextInt();
         try {switch (choise) {
                 case (1):
                     System.out.println("Укажите каталог имя каталога:");
-                    Read.read(sc);
+                    String fileName = sc.next();
+                    Read.read(fileName);
                     break;
                 case (2):
                     System.out.println("Укажите название каталога.");
-                    Buy.buy();
+                    fileName = sc.next();
+                    System.out.println("Выберите интересующую позицию (отсчет идет с 0): ");
+                    int position = Integer.parseInt(sc.next());
+                    System.out.println("Выберите количество товара (до 10 у.е.):");
+                    int count = Integer.parseInt(sc.next());
+                    Buy.buy(fileName,position,count);
                     break;
                 case (3):
                     System.out.println("1. Укажите название каталога (либо задайте новый).\n" +
@@ -42,13 +48,17 @@ public class FileApp {
                     break;
                 case (6):
                 System.out.println("Ну давай что-нибудь соберем.");
+                    System.out.println("Выберите тип техники:?\n" +
+                            "1.Тяжело-бронированая техника (Танк).\n" +
+                            "2.Легкобронированная машина (LAV)");
+                    choise = sc.nextInt();
                 Factory factory = new Factory();
-                factory.createVehicle();
+                factory.createVehicle(choise);
                 break;
                 case (7):
-                System.out.println("Добби!!!");
-                for (int i = 0; i<2;i++){
-                new Conveer("Добби"+i).start();}
+                System.out.println("Белло!");
+                MinionDirect mainMinion = new MinionDirect();
+                mainMinion.minionDirect();
                 break;
                 default:
                     System.out.println("Иди консервных банок пособирай.");

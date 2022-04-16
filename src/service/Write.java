@@ -7,6 +7,7 @@ public class Write {
     public static void write() {
         Scanner sc = new Scanner(System.in);
         String fileName = sc.next();
+        synchronized (fileName){
         try (BufferedWriter fw = new BufferedWriter(new FileWriter(CATALOG_NAME + fileName, true))) {
            fw.write("\nТип техники: " + sc.next() + ";"+"Название: " + sc.next() + ";"+"Срок_службы: "
                    + sc.next() + ";" +"Вес: " + sc.next() + ";"+"Стоимость: " + sc.nextInt() + ";");
@@ -20,5 +21,6 @@ public class Write {
             System.out.println("Еще раз и в шахты!");
             write();
         }
+      }
     }
 }
